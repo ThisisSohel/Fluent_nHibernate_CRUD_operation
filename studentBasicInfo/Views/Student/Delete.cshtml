@@ -1,0 +1,21 @@
+﻿@model studentBasicInfo.Models.Student
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Student</h2>
+
+<p>Are you sure you want to delete student: @Model.Name?</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+    </div>
+}
+
+
